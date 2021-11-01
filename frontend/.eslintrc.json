@@ -1,0 +1,211 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb",
+        "eslint:all",
+        "plugin:import/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:react/all",
+        "react-app"
+    ],
+    "overrides": [
+        {
+            "files": ["*.js", "*.jsx"],
+            "rules": {
+                "sort-keys-fix/sort-keys-fix": [
+                    "warn",
+                    "asc",
+                    {
+                        "natural": true
+                    }
+                ]
+            }
+        }
+    ],
+    "plugins": [
+        "react",
+        "unused-imports",
+        "sort-keys-fix",
+        "prettier",
+        "jsx-a11y",
+        "sort-destructure-keys"
+    ],
+    "rules": {
+        "array-bracket-newline": "off",
+        "array-element-newline": "off",
+        "arrow-body-style": ["warn", "as-needed"],
+        "arrow-parens": ["warn", "always"],
+        "comma-dangle": [
+            "warn",
+            {
+                "arrays": "only-multiline",
+                "exports": "only-multiline",
+                "functions": "only-multiline",
+                "imports": "only-multiline",
+                "objects": "only-multiline"
+            }
+        ],
+        "comment-empty-line-before": "off",
+        "complexity": [
+            "warn",
+            {
+                "max": 18
+            }
+        ],
+        "default-param-last": "off",
+        "dot-notation": [
+            "warn",
+            {
+                "allowPattern": "^[a-z]+(-[a-z]+)+$"
+            }
+        ],
+        "eqeqeq": ["warn", "smart"],
+        "func-style": "off",
+        "guard-for-in": "warn",
+        "id-length": "off",
+        "implicit-arrow-linebreak": "off",
+        "import/export": "off",
+        "import/extensions": "off",
+        "import/newline-after-import": "warn",
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": "off",
+        "import/order": "warn",
+        "import/prefer-default-export": "off",
+        "indent": "off",
+        "init-declarations": "warn",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/interactive-supports-focus": "off",
+        "jsx-a11y/no-static-element-interactions": "warn",
+        "jsx-quotes": "off",
+        "linebreak-style": ["warn", "unix"],
+        "max-classes-per-file": ["warn", 5],
+        "max-len": [
+            "warn",
+            {
+                "code": 200
+            }
+        ],
+        "max-lines": "off",
+        "max-lines-per-function": "off",
+        "max-statements": "off",
+        "multiline-comment-style": "off",
+        "multiline-ternary": "off",
+        "no-console": "warn",
+        "no-duplicate-imports": "off",
+        "no-else-return": "off",
+        "no-extra-parens": "off",
+        "no-extra-semi": "warn",
+        "no-implicit-globals": "off",
+        "no-magic-numbers": "off",
+        "no-mixed-operators": "off",
+        "no-mixed-spaces-and-tabs": "off",
+        "no-negated-condition": "off",
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "no-redeclare": "off",
+        "no-restricted-syntax": "off",
+        "no-shadow": [
+            "off",
+            {
+                "hoist": "all"
+            }
+        ],
+        "no-tabs": "off",
+        "no-ternary": "off",
+        "no-trailing-spaces": "warn",
+        "no-undef": "off",
+        "no-underscore-dangle": "off",
+        "no-unused-expressions": "off",
+        "no-unused-vars": "off",
+        "no-use-before-define": "off",
+        "object-curly-newline": "off",
+        "object-curly-spacing": "warn",
+        "object-property-newline": "warn",
+        "one-var": ["warn", "never"],
+        "prefer-destructuring": "off",
+        "prefer-named-capture-group": "off",
+        "prettier/prettier": "off",
+        "quote-props": [
+            "warn",
+            "as-needed",
+            {
+                "unnecessary": true
+            }
+        ],
+        "quotes": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "react/display-name": "off",
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function"
+            }
+        ],
+        "react/jsx-closing-bracket-location": "off",
+        "react/jsx-curly-newline": "off",
+        "react/jsx-filename-extension": [
+            2,
+            {
+                "extensions": [".jsx", ".tsx"]
+            }
+        ],
+        "react/jsx-first-prop-new-line": "off",
+        "react/jsx-indent": ["warn", 4],
+        "react/jsx-indent-props": ["warn", 4],
+        "react/jsx-max-depth": "off",
+        "react/jsx-newline": "warn",
+        "react/jsx-no-literals": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/jsx-wrap-multilines": "off",
+        "react/no-multi-comp": "off",
+        "react/no-unstable-nested-components": "off",
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "require-await": "off",
+        "require-unicode-regexp": "warn",
+        "semi": "off",
+        "sort-destructure-keys/sort-destructure-keys": "warn",
+        "sort-imports": [
+            "warn",
+            {
+                "ignoreCase": false,
+                "ignoreDeclarationSort": true,
+                "ignoreMemberSort": false,
+                "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+            }
+        ],
+        "sort-keys": [
+            "off",
+            "asc",
+            {
+                "caseSensitive": false,
+                "minKeys": 2,
+                "natural": false
+            }
+        ],
+        "sort-keys-fix/sort-keys-fix": "off",
+        "sort-vars": "warn",
+        "unused-imports/no-unused-imports-ts": "off",
+        "unused-imports/no-unused-vars-ts": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".jsx", ".ts", ".tsx", ".js"],
+                "paths": ["./src"]
+            }
+        },
+        "jest": { "version": 26 }
+    }
+}
