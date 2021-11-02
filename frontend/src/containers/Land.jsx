@@ -1,2 +1,2 @@
-const Land = () => <></>;
+const Land = () => <div />;
 export default Land;

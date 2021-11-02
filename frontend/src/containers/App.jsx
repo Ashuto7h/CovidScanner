@@ -1,4 +1,5 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route } from 'react-router-dom';
+import { Switch } from '@mui/material';
 import CustomAppBar from '../components/CustomAppBar';
 import Land from './Land';
 import Footer from '../components/Footer';
@@ -25,14 +26,17 @@ const App = () => {
             ]
         }
     ];
+    const location = useLocation();
     return (
         <>
             <CustomAppBar />
 
             <BrowserRouter>
                 <Switch>
-                    {routes.map((route) => (
+                    {routes.map((route, i) => (
                         <Route
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={i}
                             exact={route.exact}
                             path={route.path}
                             render={(props) => <route.component {...props} routes={route.routes} />}
