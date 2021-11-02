@@ -1,8 +1,8 @@
-import { BrowserRouter, Redirect, Route } from 'react-router-dom';
-import { Switch } from '@mui/material';
-import CustomAppBar from '../components/CustomAppBar';
+import { BrowserRouter, Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import CustomAppBar from '../components/CustomAppBar.jsx';
 import Land from './Land';
 import Footer from '../components/Footer';
+import Upload from './Upload';
 
 const App = () => {
     const routes = [
@@ -14,19 +14,9 @@ const App = () => {
         {
             component: Upload,
             path: '/try',
-            routes: [
-                {
-                    component: Bus,
-                    path: '/tacos/bus'
-                },
-                {
-                    component: Cart,
-                    path: '/tacos/cart'
-                }
-            ]
         }
     ];
-    const location = useLocation();
+
     return (
         <>
             <CustomAppBar />
@@ -45,14 +35,7 @@ const App = () => {
 
                     <Route
                         path='*'
-                        render={(props) => (
-                            <Redirect
-                                to={{
-                                    pathname: '/',
-                                    state: { from: location }
-                                }}
-                            />
-                        )}
+                        render={(props) => (<Redirect to={{ pathname: '/' }} />)}
                     />
                 </Switch>
             </BrowserRouter>

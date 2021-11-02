@@ -1,38 +1,39 @@
+import { Box } from '@mui/system';
 import { useEffect, useRef, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
-const useFadeInStyles = createUseStyles({
+const useFadeInStyles = createUseStyles((theme) => ({
     isVisible: {
         display: 'flex',
-        opacity: 1,
+        opacity: '1 !important',
         transform: 'none',
-        visibility: 'visible'
+        visibility: 'visible !important'
     },
 
     section: {
-        boxShadow: '0 0 8px rgba(0, 0, 0, .125)',
-        height: '64px',
-        margin: '16px',
         opacity: 0,
-        padding: '16px',
-        transform: 'translate(0, 50 %)',
-        transition: 'opacity 300ms ease-out, transform 300ms ease-out',
+        // padding: '16px',
+transform: 'translate(0, 50 %)',
+
+        transition: `opacity ${theme.ms ?? 1000}ms ease-out, transform ${
+            theme.ms ?? 1000
+        }ms ease-out`,
         visibility: 'hidden',
+        width: '100%',
         willChange: 'opacity, visibility'
     }
-});
+}));
 
-const FadeIn = ({ children }) => {
+const FadeIn = ({ children, className, ms }) => {
     const domRef = useRef();
-    const classes = useFadeInStyles();
+    const classes = useFadeInStyles({ theme: { ms } });
     const [isVisible, setVisible] = useState(false);
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             // In your case there's only one element to observe:
             if (entries[0].isIntersecting) {
                 // Not possible to set it back to false like this:
-                setVisible(true);
-
+                setTimeout(() => setVisible(true), 500);
                 // No need to keep observing:
                 observer.unobserve(domRef.current);
             }
@@ -40,13 +41,17 @@ const FadeIn = ({ children }) => {
 
         observer.observe(domRef.current);
 
-        return () => observer.unobserve(domRef.current);
+        return () => domRef.current && observer.unobserve(domRef.current);
     }, []);
 
     return (
-        <section ref={domRef} className={`${isVisible && classes.isVisible} ${classes.section}`}>
-            {children}
-        </section>
+        <Box>
+            <section
+                ref={domRef}
+                className={`${classes.section} ${isVisible && classes.isVisible} ${className}`}>
+                {children}
+            </section>
+        </Box>
     );
 };
 

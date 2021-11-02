@@ -34,7 +34,7 @@ const CustomAppBar = () => {
     const classes = useCustomAppBarStyles();
     return (
         <Box>
-            <AppBar className={classes.appBar} position='static'>
+            <AppBar className={classes.appBar} position='sticky'>
                 <Toolbar>
                     <Typography component='div' variant='h6'>
                         <span className={classes.covidLogo}>Covid</span>

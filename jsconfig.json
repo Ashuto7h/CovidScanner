@@ -1,12 +1,15 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "CommonJS",
         "target": "es2020",
-        "jsx": "preserve",
+        "jsx": "react-jsx",
         "strictFunctionTypes": true
     },
     "exclude": [
         "node_modules",
         "**/node_modules/*"
+    ],
+    "include":[
+        "frontend/src/*"
     ]
 }
