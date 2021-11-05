@@ -2,7 +2,7 @@ import { BrowserRouter, Redirect, Route, Switch, useLocation } from 'react-route
 import CustomAppBar from '../components/CustomAppBar.jsx';
 import Land from './Land';
 import Footer from '../components/Footer';
-import Upload from './Upload';
+import Scan from './Scan';
 
 const App = () => {
     const routes = [
@@ -12,8 +12,8 @@ const App = () => {
             path: '/'
         },
         {
-            component: Upload,
-            path: '/try',
+            component: Scan,
+            path: '/try'
         }
     ];
 
@@ -33,10 +33,7 @@ const App = () => {
                         />
                     ))}
 
-                    <Route
-                        path='*'
-                        render={(props) => (<Redirect to={{ pathname: '/' }} />)}
-                    />
+                    <Route path='*' render={(props) => <Redirect to={{ pathname: '/' }} />} />
                 </Switch>
             </BrowserRouter>
 

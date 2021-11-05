@@ -49,10 +49,10 @@ const UploadCard = ({ className, disabled }) => {
 
                     <Typography textAlign='center'>
                         {/* eslint-disable-next-line react/jsx-child-element-spacing */}
-                        Don&apos;t have any image?
+                        Don&apos;t have any scan?
 
                         <span className={classes.trySample}>
-                            Try Samples
+                            &nbsp;Try Samples
                             <ArrowRightAlt className={classes.noImage} />
                         </span>
                     </Typography>

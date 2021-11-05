@@ -19,52 +19,50 @@ const PredictCard = () => {
     ];
 
     return (
-        <FadeIn ms={1500}>
-            <Paper
-                elevation={4}
-                sx={{
-                    height: '250px',
-                    left: '-105px',
-                    position: 'relative',
-                    top: '10px',
-                    transform: 'rotate(19deg)',
-                    width: '280px'
-                }}>
-                <CardContent>
-                    <Typography
-                        gutterBottom
-                        sx={{
-                            fontSize: '18px',
-                            fontWeight: 'bold'
-                        }}
-                        textAlign='center'>
-                        Predictions
-                    </Typography>
+        <Paper
+            elevation={4}
+            sx={{
+                height: '250px',
+                left: '-105px',
+                position: 'relative',
+                top: '10px',
+                transform: 'rotate(19deg)',
+                width: '280px'
+            }}>
+            <CardContent>
+                <Typography
+                    gutterBottom
+                    sx={{
+                        fontSize: '18px',
+                        fontWeight: 'bold'
+                    }}
+                    textAlign='center'>
+                    Predictions
+                </Typography>
 
-                    <Grid container spacing={2}>
-                        {predictions.map((pred) => (
-                            <Fragment key={pred.name}>
-                                <Grid item xs={8}>
-                                    {pred.name}
-                                </Grid>
+                <Grid container spacing={2}>
+                    {predictions.map((pred) => (
+                        <Fragment key={pred.name}>
+                            <Grid item xs={8}>
+                                {pred.name}
+                            </Grid>
 
-                                <Grid item textAlign='end' xs={4}>
-                                    {pred.percent}%
-                                </Grid>
+                            <Grid item textAlign='end' xs={4}>
+                                {pred.percent}%
+                            </Grid>
 
-                                <Grid item xs={12}>
-                                    <LinearProgress
-                                        className={pred.class}
-                                        value={pred.percent}
-                                        variant='determinate'
-                                    />
-                                </Grid>
-                            </Fragment>
-                        ))}
-                    </Grid>
-                </CardContent>
-            </Paper>
-        </FadeIn>
+                            <Grid item xs={12}>
+                                <LinearProgress
+                                    className={pred.class}
+                                    value={pred.percent}
+                                    variant='determinate'
+                                />
+                            </Grid>
+                        </Fragment>
+                    ))}
+                </Grid>
+            </CardContent>
+        </Paper>
     );
 };
 export default PredictCard;

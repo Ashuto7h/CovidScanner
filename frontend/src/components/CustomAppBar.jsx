@@ -8,6 +8,9 @@ const useCustomAppBarStyles = createUseStyles({
         background: `${COLORS.appBarBackground} !important`
     },
     covidLogo: {
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent',
+        background: 'linear-gradient(180deg, rgba(37,123,224,1) 10%, rgba(100,198,247,1) 90%)',
         color: COLORS.covidColor,
         fontFamily: "'Kanit', sans-serif",
         fontSize: '22px',

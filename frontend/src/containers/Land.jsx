@@ -1,8 +1,10 @@
 import { createUseStyles } from 'react-jss';
-import { Typography } from '@mui/material';
+import { Grid, Step, StepLabel, Stepper, Typography } from '@mui/material';
+import { CloudUploadTwoTone } from '@mui/icons-material';
 import FadeIn from '../components/FadeIn';
 import UploadCard from '../components/UploadCard';
 import PredictCard from '../components/PredictCard';
+import { UploadIcon } from '../assets';
 
 const useLandStyles = createUseStyles({
     arrowRightTop: {
@@ -32,6 +34,12 @@ const useLandStyles = createUseStyles({
         transform: 'rotateZ(345deg)',
         width: '400px'
     },
+    gradientText: {
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent',
+        background: 'linear-gradient(180deg, rgba(37,123,224,1) 10%, rgba(100,198,247,1) 90%)',
+        textShadow: '0px 7px 8px #01073940'
+    },
     sec1: {
         alignItems: 'center',
         display: 'flex',
@@ -44,19 +52,20 @@ const useLandStyles = createUseStyles({
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'nowrap',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        width: '100%'
     },
-    sec2: { marginTop: '260px' },
+    sec2: { marginTop: '400px' },
+    sec3: { marginTop: '200px' },
+    sec4: { marginTop: '200px' },
+    upload2Tone: { height: '200px', width: '200px' },
     uploadCard: {
-
-
         backgroundColor: 'transparent !important',
 
-
-borderRadius: '15px !important',
+        borderRadius: '15px !important',
         // boxShadow:
-//     '0px 10px 30px 5px rgb(0 0 0 / 20%), 0px 7px 18px 2px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%) !important',
-left: '-60px',
+        //     '0px 10px 30px 5px rgb(0 0 0 / 20%), 0px 7px 18px 2px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%) !important',
+        left: '-60px',
         position: 'relative',
         top: '195px'
     }
@@ -64,6 +73,7 @@ left: '-60px',
 
 const Land = () => {
     const classes = useLandStyles();
+    const steps = ['Get A CT Scan', 'Upload the CT Scan', 'Get Covid Predictions'];
     return (
         <>
             <FadeIn className={classes.sec1}>
@@ -93,19 +103,56 @@ const Land = () => {
             </FadeIn>
 
             <FadeIn className={classes.sec2}>
-                <Typography textAlign='center' variant='h1'>
-                    Get Covid Predictions in easy steps
-                </Typography>
+                <Grid container rowGap={5}>
+                    <Grid item xs={12}>
+                        <Typography
+                            className={classes.gradientText}
+                            fontWeight='bold'
+                            sx={{ color: '#04123aab' }}
+                            textAlign='center'
+                            variant='h4'>
+                            Get Covid Predictions In Easy Steps
+                        </Typography>
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <Stepper activeStep={1} alternativeLabel>
+                            {steps.map((label) => (
+                                <Step key={label}>
+                                    <StepLabel>{label}</StepLabel>
+                                </Step>
+                            ))}
+                        </Stepper>
+                    </Grid>
+                </Grid>
             </FadeIn>
 
-            <FadeIn className={classes.sec2}>
-                <Typography textAlign='center' variant='h1'>
-                    Upload Multiple Files (max : 50)
-                </Typography>
+            <FadeIn className={classes.sec3}>
+                <Grid container rowGap={2}>
+                    <Grid item xs={12}>
+                        <Typography
+                            className={classes.gradientText}
+                            fontWeight='bold'
+                            textAlign='center'
+                            variant='h4'>
+                            Upload Any Amount of Files
+                        </Typography>
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <Typography fontWeight='bold' textAlign='center' variant='h4'>
+                            <UploadIcon className={classes.upload2Tone} />
+                        </Typography>
+                    </Grid>
+                </Grid>
             </FadeIn>
 
-            <FadeIn className={classes.sec2}>
-                <Typography textAlign='center' variant='h1'>
+            <FadeIn className={classes.sec4}>
+                <Typography
+                    className={classes.gradientText}
+                    fontWeight='bold'
+                    textAlign='center'
+                    variant='h4'>
                     Upload Scans in any format
                 </Typography>
             </FadeIn>

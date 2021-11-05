@@ -17,7 +17,7 @@ def allowed_file(filename):
 @bp_scan.route('/upload', methods=['POST'])
 def upload():
     # check if the post request has the file part
-    print(request.files)
+    print(request.files,request.body)
     if 'file' not in request.files:
         return jsonify(error=error_messages('NoFilesRecieved'))
 
@@ -33,3 +33,4 @@ def upload():
         return jsonify(file_name=filename, upload=True)
 
     return jsonify(error=error_messages('BadRequest'))
+

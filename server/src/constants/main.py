@@ -1,7 +1,8 @@
 from typing import Literal, Optional
 
-ALLOWED_EXTENSIONS = ['dcm', 'png', 'jpg', 'jpeg', 'nii']
 
+ALLOWED_EXTENSIONS = ['dcm', 'png', 'jpg', 'jpeg', 'nii','webp']
+SUPPORTED_IMAGE_FORMATS = ['png', 'jpg', 'jpeg', 'webp']
 ErrorKeys = Literal['UnsupportedFormat', 'NoFilesRecieved', 'BadRequest']
 
 
