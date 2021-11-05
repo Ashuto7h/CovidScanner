@@ -7,18 +7,14 @@ const useFadeInStyles = createUseStyles((theme) => ({
         display: 'flex',
         opacity: '1 !important',
         transform: 'none !important',
-        transition: `opacity ${theme.ms ?? 600}ms ease-out, transform ${
-            theme.ms ?? 600
-        }ms ease-in`,
-        visibility: 'visible !important',
+        transition: `opacity ${theme.ms ?? 600}ms ease-out, transform ${theme.ms ?? 600}ms ease-in`,
+        visibility: 'visible !important'
     },
 
     section: {
         opacity: 0,
         transform: 'translate(0, 20%)',
-        transition: `opacity ${theme.ms ?? 600}ms ease-out, transform ${
-            theme.ms ?? 600
-        }ms ease-in`,
+        transition: `opacity ${theme.ms ?? 600}ms ease-out, transform ${theme.ms ?? 600}ms ease-in`,
         visibility: 'hidden',
         width: '100%',
         willChange: 'opacity, visibility'
