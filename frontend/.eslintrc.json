@@ -124,6 +124,7 @@
         "no-ternary": "off",
         "no-trailing-spaces": "warn",
         "no-undef": "off",
+        "no-undefined": "warn",
         "no-underscore-dangle": "off",
         "no-unused-expressions": "off",
         "no-unused-vars": "off",
