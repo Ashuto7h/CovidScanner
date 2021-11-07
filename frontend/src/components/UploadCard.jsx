@@ -4,7 +4,7 @@ import { CardContent, FormControlLabel, Paper, Radio, RadioGroup, Typography } f
 import { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { useHistory } from 'react-router';
-import { ALLOWED_EXTENSIONS, API_URL } from '../constants';
+import { ALLOWED_EXTENSIONS, API_URL, COLORS } from '../constants';
 import Dropzone from './Dropzone';
 import FadeIn from './FadeIn';
 
@@ -26,6 +26,7 @@ const UploadCard = ({ batchInfo, className, disabled, setBatchInfo, upload }) =>
     const [hiddenSamples, setHiddenSamples] = useState(true);
     const [isUploading, setIsUploading] = useState(false);
     const [files, setFiles] = useState([]);
+
     const uploadFiles = async () => {
         setIsUploading(true);
         if (files.length <= 0) return;
@@ -52,18 +53,16 @@ const UploadCard = ({ batchInfo, className, disabled, setBatchInfo, upload }) =>
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
                     const newData = { ...data };
                     newData.status = [...errors, ...data.status];
                     setBatchInfo(newData);
                 })
                 .catch((error) => {
-                    console.log(error);
+                    // console.log(error);
                 });
         } else {
             setBatchInfo({ status: error });
         }
-        console.log(batchInfo);
         setIsUploading(false);
     };
     return (
@@ -96,7 +95,7 @@ const UploadCard = ({ batchInfo, className, disabled, setBatchInfo, upload }) =>
                     </Typography>
 
                     <Dropzone
-                        disabled={disabled}
+                        disabled={disabled || isUploading}
                         files={files}
                         setFiles={setFiles}
                         upload={upload}
@@ -108,7 +107,11 @@ const UploadCard = ({ batchInfo, className, disabled, setBatchInfo, upload }) =>
                         loadingPosition='start'
                         onClick={uploadFiles}
                         startIcon={<Upload />}
-                        sx={{ backgroundColor: upload && '#04123acc', marginTop: '10px' }}
+                        sx={{
+                            backgroundColor: upload && `${COLORS.uploadLightColor} !important`,
+                            color: '#fff !important',
+                            marginTop: '10px'
+                        }}
                         variant='contained'>
                         Upload
                     </LoadingButton>

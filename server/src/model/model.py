@@ -4,11 +4,12 @@ import numpy
 from flask import json
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
+from tensorflow.python.keras.engine.training import Model
 
-from ..constants.main import SUPPORTED_IMAGE_FORMATS, error_messages
+from ..constants import SUPPORTED_IMAGE_FORMATS, error_messages
 
 PATH = os.path.join(os.getcwd(), 'src', 'model', 'custom_cnn.h5')
-COVID_MODEL = load_model(PATH)
+COVID_MODEL: Model = load_model(PATH)
 
 
 def predict(batch_id='b_01'):

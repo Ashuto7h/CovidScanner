@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-child-element-spacing */
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { createUseStyles } from 'react-jss';
 
@@ -22,6 +22,8 @@ const useDropzoneStyles = createUseStyles((theme) => ({
         '&::-webkit-scrollbar': {
             display: 'none'
         },
+        alignItems: 'center',
+        display: 'flex',
         height: '100%',
         margin: '4px',
         overflowY: 'scroll',

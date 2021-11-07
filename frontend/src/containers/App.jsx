@@ -1,7 +1,6 @@
-import { BrowserRouter, Redirect, Route, Switch, useLocation } from 'react-router-dom';
-import CustomAppBar from '../components/CustomAppBar.jsx';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { CustomAppBar, Footer } from '../components';
 import Land from './Land';
-import Footer from '../components/Footer';
 import Scan from './Scan';
 
 const App = () => {

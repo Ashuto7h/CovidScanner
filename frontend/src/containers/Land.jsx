@@ -1,10 +1,10 @@
-import { createUseStyles } from 'react-jss';
 import { Grid, Step, StepLabel, Stepper, Typography } from '@mui/material';
-import { CloudUploadTwoTone } from '@mui/icons-material';
-import FadeIn from '../components/FadeIn';
-import UploadCard from '../components/UploadCard';
-import PredictCard from '../components/PredictCard';
+import { createUseStyles } from 'react-jss';
 import { UploadIcon } from '../assets';
+import FadeIn from '../components/FadeIn';
+import PredictCard from '../components/PredictCard';
+import UploadCard from '../components/UploadCard';
+import { COLORS } from '../constants';
 
 const useLandStyles = createUseStyles({
     arrowRightTop: {
@@ -56,15 +56,12 @@ const useLandStyles = createUseStyles({
         width: '100%'
     },
     sec2: { marginTop: '400px' },
-    sec3: { marginTop: '200px' },
-    sec4: { marginTop: '200px' },
+    sec3: { marginTop: '150px' },
+    sec4: { marginTop: '100px' },
     upload2Tone: { height: '200px', width: '200px' },
     uploadCard: {
         backgroundColor: 'transparent !important',
-
         borderRadius: '15px !important',
-        // boxShadow:
-        //     '0px 10px 30px 5px rgb(0 0 0 / 20%), 0px 7px 18px 2px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%) !important',
         left: '-60px',
         position: 'relative',
         top: '195px'
@@ -137,6 +134,14 @@ const Land = () => {
                             variant='h4'>
                             Upload Any Amount of Files
                         </Typography>
+
+                        <Typography
+                            color='#000000de'
+                            fontWeight={500}
+                            sx={{ mt: 2 }}
+                            textAlign='center'>
+                            Upload files in batches, supports upto 50 files per batch
+                        </Typography>
                     </Grid>
 
                     <Grid item xs={12}>
@@ -148,13 +153,64 @@ const Land = () => {
             </FadeIn>
 
             <FadeIn className={classes.sec4}>
-                <Typography
-                    className={classes.gradientText}
-                    fontWeight='bold'
-                    textAlign='center'
-                    variant='h4'>
-                    Upload Scans in any format
-                </Typography>
+                <Grid container rowGap={2}>
+                    <Grid item xs={12}>
+                        <Typography
+                            className={classes.gradientText}
+                            fontWeight='bold'
+                            textAlign='center'
+                            variant='h4'>
+                            Upload Scans in any format
+                        </Typography>
+
+                        <Typography
+                            color='#000000de'
+                            fontWeight={500}
+                            sx={{ mt: 2 }}
+                            textAlign='center'>
+                            support uploading CT scan in any of these - image format / dicom file /
+                            nibabel file
+                        </Typography>
+                    </Grid>
+
+                    <Grid
+                        direction='row'
+                        display='flex'
+                        item
+                        justifyContent='center'
+                        spacing={5}
+                        xs={12}>
+                        <Grid xs={4}>
+                            <Typography
+                                color={COLORS.lightBackgroundDrop}
+                                fontSize='1.5rem'
+                                fontWeight='bold'
+                                textAlign='end'>
+                                .DCM
+                            </Typography>
+                        </Grid>
+
+                        <Grid xs={4}>
+                            <Typography
+                                color={COLORS.lightBackgroundDrop}
+                                fontSize='1.5rem'
+                                fontWeight='bold'
+                                textAlign='center'>
+                                IMAGE (PNG | JPG | WEBP)
+                            </Typography>
+                        </Grid>
+
+                        <Grid xs={4}>
+                            <Typography
+                                color={COLORS.lightBackgroundDrop}
+                                fontSize='1.5rem'
+                                fontWeight='bold'
+                                textAlign='start'>
+                                .NII
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                </Grid>
             </FadeIn>
         </>
     );
