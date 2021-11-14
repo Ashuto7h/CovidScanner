@@ -1,7 +1,6 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import useCustomAppBarStyles from './customAppBarStyles';
 
-
 const CustomAppBar = () => {
     const classes = useCustomAppBarStyles();
     return (

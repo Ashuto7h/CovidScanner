@@ -1,10 +1,10 @@
 import { Dialog, Grid, Typography } from '@mui/material';
 import { createUseStyles } from 'react-jss';
 import { API_URL, COLORS } from '../constants';
-import PredictCard from "./PredictCard";
+import PredictCard from './PredictCard';
 
 const usePredictDialogStyles = createUseStyles({
-    fileName: { color:COLORS.uploadLightColor },
+    fileName: { color: COLORS.uploadLightColor },
     image: { width: '300px' },
     imgDiv: { padding: '10px', width: 'max-content' }
 });

@@ -40,6 +40,7 @@
         "eslint-plugin-sort-keys-fix": "~1.1.2",
         "eslint-plugin-unused-imports": "~1.1.5",
         "prettier": "~2.4.1",
+        "sass": "^1.43.4",
         "serve": "^13.0.2",
         "stylelint": "~14.0.1",
         "stylelint-config-standard": "~23.0.0",
@@ -52,8 +53,8 @@
         ]
     },
     "engines": {
-        "node": "14.18.1",
-        "npm": "8.1.1"
+        "node": "16.13.0",
+        "npm": "8.1.0"
     },
     "name": "covid-scanner",
     "private": true,
@@ -63,7 +64,7 @@
         "eslint-fix": "eslint --fix \"**/*.{js,jsx}\"",
         "prettier": "prettier --write .",
         "run": "react-scripts start",
-        "start":"serve -s build",
+        "start": "serve -s build",
         "test": "react-scripts test"
     },
     "version": "0.1.0"
