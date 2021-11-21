@@ -11,4 +11,4 @@ covid patient or not. It uses Deep Learning models in backend to provide accurat
     <img src="./assets/preview_mode.png" width="800px" style="margin-bottom: 10px" />
 </details>
 
-To view the detailed ML study, [visit here](./ML_study/STUDY.html)
+To view the detailed ML study, [visit here](https://covidscaner.herokuapp.com/STUDY.html)
