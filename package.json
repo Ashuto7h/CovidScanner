@@ -23,9 +23,9 @@
         }
     },
     "scripts": {
-        "eslint": "cd frontend_t && npm run eslint-fix",
+        "eslint": "cd frontend && npm run eslint-fix",
         "git-add": "git add .",
-        "prettier": "cd frontend_t && npm run prettier",
+        "prettier": "cd frontend && npm run prettier",
         "prepare": "husky install"
     },
     "version": "1.0.0"
