@@ -17,11 +17,6 @@
         "type": "git",
         "url": "git+https://github.com/Ashuto7h/CovidScanner.git"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm-run-all prettier eslint git-add"
-        }
-    },
     "scripts": {
         "eslint": "cd frontend && npm run eslint-fix",
         "git-add": "git add .",
